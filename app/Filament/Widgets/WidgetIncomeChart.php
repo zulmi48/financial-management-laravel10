@@ -20,7 +20,7 @@ class WidgetIncomeChart extends ChartWidget
     {
         $startDate = !is_null($this->filters['startDate'] ?? null) ?
             Carbon::parse($this->filters['startDate']) :
-            null;
+            Carbon::parse('first day of this month');
 
         $endDate = !is_null($this->filters['endDate'] ?? null) ?
             Carbon::parse($this->filters['endDate']) :
