@@ -40,7 +40,8 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\IconColumn::make('is_expense')
                     ->boolean()
                     ->trueIcon('heroicon-s-arrow-up-circle')
