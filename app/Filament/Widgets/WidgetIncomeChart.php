@@ -14,7 +14,6 @@ class WidgetIncomeChart extends ChartWidget
     use InteractsWithPageFilters;
 
     protected static ?string $heading = 'Pemasukan';
-    protected static string $color = 'success';
 
     protected function getData(): array
     {
@@ -39,6 +38,7 @@ class WidgetIncomeChart extends ChartWidget
                 [
                     'label' => 'Pemasukan per Hari',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'borderColor' => 'limegreen',
                 ],
             ],
             'labels' => $data->map(fn (TrendValue $value) => $value->date),

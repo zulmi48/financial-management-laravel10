@@ -14,7 +14,6 @@ class WidgetExpenseChart extends ChartWidget
     use InteractsWithPageFilters;
 
     protected static ?string $heading = 'Pengeluaran';
-    protected static string $color = 'danger';
 
     protected function getData(): array
     {
@@ -39,6 +38,7 @@ class WidgetExpenseChart extends ChartWidget
                 [
                     'label' => 'Pengeluaran per Hari',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'borderColor' => 'crimson',
                 ],
             ],
             'labels' => $data->map(fn (TrendValue $value) => $value->date),
